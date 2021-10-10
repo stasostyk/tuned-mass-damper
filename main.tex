@@ -1,10 +1,11 @@
-\documentclass{article}
+\documentclass[11pt]{article}
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage[table,xcdraw]{xcolor}
+\usepackage{blindtext}
 
 \usepackage{geometry}
  \geometry{
@@ -12,6 +13,7 @@
  left=20mm,
  right=20mm,
  bottom=25mm,
+ top=25mm,
  }
 
 \pagestyle{fancy}
@@ -20,14 +22,28 @@
 \rfoot{Page \thepage}
 
 \title{Fighting earthquakes with pendulums: the Tuned Mass Damper}
+
 \author{Physics Internal Assessment
 }
+
 \date{September 2021}
 
 
 \begin{document}
-\maketitle
-\tableofcontents
+\begin{titlepage}
+	\centering
+	{\huge\bfseries Fighting earthquakes with pendulums: the Tuned Mass Damper \par}
+	\vspace{2cm}
+	{\scshape\Large Research Question: How does the mass of a Tuned Mass Damper affect the dissipation of mechanical energy in an oscillating structure? \par}
+	\vspace{1.5cm}
+	{\Large\itshape Physics Internal Assessment \par}
+
+	\vfill
+
+% Bottom of the page
+\end{titlepage}
+
+
 \clearpage
 \section{Introduction}
 
@@ -36,6 +52,7 @@
 \section{Theoretical Background}
 
 \begin{wrapfigure}{l}{0.2\linewidth}
+\vspace{-15pt}
 \centering
 \includegraphics[width=0.2\textwidth]{img/fig1.jpg}
 \caption{\label{fig:1}Initial displacement}
@@ -51,7 +68,7 @@ An earthquake repeatedly displaces the base of a structure. Changing points of r
 
 \subsection{The structure}
 
-Internal reinforcement of the structure applies a restoring force, $F_s$ (Newtons), to bring the structure back to vertical equilibrium, a force denoted by $F_s \propto -\Delta d$. A force opposite and proportional to displacement oscillates the structure around its equilibrium, denoted by the vertical red line in Figure 2, resulting in simple harmonic motion. 
+Internal reinforcement of the structure applies a restoring force, $F_s$ (Newtons), to bring the structure back to vertical equilibrium, a force denoted by $F_s \propto -\Delta d$. A force opposite and proportional to displacement oscillates the structure around its equilibrium, denoted by the vertical red line in Figure 2, resulting in simple harmonic motion.
 
 
 
@@ -69,7 +86,7 @@ As the structure oscillates, some of its mechanical energy, $ME$ (Joules), is tr
 \section{Deriving The Formula}
 
 To measure the total mechanical energy in the oscillating structure, I can use $ME=\frac{1}{2}k\Delta d ^2+\frac{1}{2}mv_2$ (Joules), the sum of its kinetic and potential energy, with some unknown constant $k$, mass $m$, and velocity $v$. However, at maximum displacement $\Delta d_1$ and $\Delta d_2$, there is no kinetic energy, simplifying the equation to $ME=\frac{1}{2}k \Delta d^2$. To measure the \textbf{percentage loss of mechanical energy due to damping}, we can use the equation $$\frac{ME_1-ME_2}{ME_1}\times100\%$$ which cancels out the unknown constant $\frac{1}{2}k$ resulting in the neat formula $\zeta=\frac{\Delta d_1^2-\Delta d_2^2}{\Delta d_1^2}\times100\%$ where $\zeta$ (\%) is the percentage of lost mechanical energy.
-$\Delta d_1$ is a constant variable, equal to the initial displacement of the structure as a result of the earthquake. $\Delta d_2$ is the maximum displacement of the structure during its second period of oscillation, which allows me to measure the \textbf{immediate loss in mechanical energy between the first two consecutive periods of oscillation}. I can not measure $\Delta d_2$ in meters because it oscillates too fast for a human to measure, which is why I will use an accelerometer. The relationship between acceleration and displacement is $a=\omega ^2 \Delta d$ where $\omega=2\pi f$, where $f$ is a constant, representing the frequency of the building’s oscillation. I can therefore use $$\Delta d_2=\frac{a_2}{4\pi^2f^2}$$ where $a_2$ is the maximum acceleration of the structure in the second period of oscillation. \textbf{This results in the final equation for $\zeta$ (Equation 1, \% of ME lost between first two consecutive periods) as:} 
+$\Delta d_1$ is a constant variable, equal to the initial displacement of the structure as a result of the earthquake. $\Delta d_2$ is the maximum displacement of the structure during its second period of oscillation, which allows me to measure the \textbf{immediate loss in mechanical energy between the first two consecutive periods of oscillation}. I can not measure $\Delta d_2$ in meters because it oscillates too fast for a human to measure, which is why I will use an accelerometer. The relationship between acceleration and displacement is $a=\omega ^2 \Delta d$ where $\omega=2\pi f$, where $f$ is a constant, representing the frequency of the building’s oscillation. I can therefore use $$\Delta d_2=\frac{a_2}{4\pi^2f^2}$$ where $a_2$ is the maximum acceleration of the structure in the second period of oscillation. \textbf{This results in the final equation for $\zeta$ (Equation 1, \% of ME lost between first two consecutive periods) as:}
 
 \begin{equation}
     \label{eqn:zeta}
@@ -81,51 +98,53 @@ I hypothesise that the percentage loss in mechanical energy $\zeta$ (\%) increas
 
 \section{Setting up the Experiment}
 
-\begin{wrapfigure}{l}{0.3\linewidth}
+I had to build the structure using only materials in my garage while maintaining the\textbf{ rigidity-flexibility} and\textbf{ height-width ratio} of a real skyscraper. I approximated this by attaching plastic straws to each other with toothpicks totalling $30cm$ high. They are attached to $5cm x 5cm$ wooden planks. For additional support it is screwed to a larger wooden platform, which reaches $5cm$ out from each side of the base of the structure. This allows the structure to oscillate while maintaining structural integrity. The platform will be placed next to a wall, so to displace by $\Delta d_1 = 5cm$ I will simply move the top of the structure until it touches the wall, separated by 5cm due to the platform size. Consider Figure 3 for reference
+
+\begin{wrapfigure}{r}{0.25\linewidth}
 \centering
-\includegraphics[width=0.3\textwidth]{img/fig3.jpg}
+\includegraphics[width=0.25\textwidth]{img/fig3.jpg}
 \caption{\label{fig:3}Assembling structure and TMD}
-\vspace{-50pt}
+\vspace{-30pt}
 \end{wrapfigure}
 
-I had to build the structure using only materials in my garage while maintaining the\textbf{ rigidity-flexibility} and\textbf{ height-width ratio} of a real skyscraper. I approximated this by using plastic straws attached to each other using toothpicks totalling $60cm$ high and with $5cm$ depth and width. This allows the structure to \underline{oscillate while maintaining structural integrity}. For the Tuned Mass Damper, I attached a metal pendulum made out of old wire and a couple of screws to the top of the structure, where I added a wooden plank to add weight to the structure. To modify the mass of the pendulum, I have a set of circular metal nuts weighing $5 grams$ which I can attach to the screw which is hanging at the bottom of the pendulum. Consider Figure 3 for reference. Finally, I measured the natural frequency of the structure, so constant $f=2.00Hz$. I then modified the length of the pendulum so that the frequency of the pendulum was similar to that of the structure using $L=\frac{g}{4\pi^2f^2}$, derived from the period of a pendulum $\frac{1}{f}=2\pi\sqrt{\frac{L}{g}}=0.0621m$, which means that the TMD will oscillate at the same frequency as the structure but in the other direction \textit{(this is the tuning aspect of a tuned mass damper!)}. I then had 5 gram metal nuts to attach to the pendulum, hence I will increment $m_p$ by 5 grams. 
 
-\subsection{Variables} 
+For the TMD, I constructed a metal pendulum made out of old wire hanging on a screw tightened together with $90^{\circ}$ metal mantles to cause friction when the TMD swings. To modify the mass $m_p$, I will place standard $5g$ circular metal nuts into the wire, then fix them in place using a plastic slider that tightens around the wire. Finally, I had to find the constant value for the natural frequency of the swaying structure $(f)$. I offset the structure by 5cm and measured the period $(T=0.500s)$, then solved for frequency,\phantom{.} $f=\frac{1}{0.500s}=2.00Hz$. To synchronise the frequency of the TMD with $f$, I modified the length of the pendulum using $L=\frac{g}{4\pi^2f^2}$, derived from the period of a pendulum $\frac{1}{f}=2\pi\sqrt{\frac{L}{g}} \rightarrow L=0.0621m$, where $L$ is the gravitational constant; hence, the TMD will oscillate at the same frequency as the structure but in the other direction \textit{(this \textbf{tunes} the mass damper)}.
 
-\begin{description}
-    \item[Independent variable: ] Mass of the Tuned Mass Damper. Modified with metal nuts, incrementing across 5, 10, 15, 20, 25, 30, 35, and 40 grams.
-    \item[Dependent variable: ] Percentage loss of mechanical energy in the structure between the first two consecutive periods of oscillation, $\zeta$ (\%).
-    \item[Controlled Variables: ] \phantom{.}
-    \begin{enumerate}
-        \item Initial displacement $\Delta d_1$ of the top of the structure. Must stay constant in order to simulate the same magnitude of an earthquake in each trial. I will control this by releasing the structure from the same distance of 5cm (measured by a ruler).
-        \item Structure’s material. The structure itself should stay constant in order to isolate the damping of the Tuned Mass Damper, rather than because of a change in rigidity. I will control this variable by using durable materials which will not alter during the experiment. 
-        \item Structure dimensions. I will maintain the height, width, and depth of the structure at 60cm, 5cm, 5cm respectively by using durable materials which will not deform, thus causing a change in natural frequency of the structure. 
-    \end{enumerate}
-\end{description}
+\subsection{Variables}
+
+\textbf{Independent variable: }
+Mass of the Tuned Mass Damper $(m_p)$. Modified with metal nuts. Increments over: 5, 10, 15, 20, 25, 30, 35, and 40 grams.
+\\ \\
+\textbf{Dependent variable:}
+Second crust of structure's acceleration (maximum acceleration in second oscillation) $(a_2)$.
+\\ \\
+\textbf{Controlled Variables:}
+\\ \underline{Initial displacement} $\Delta d_1$ of the top of the structure. Must stay constant to simulate constant magnitude of earthquake in each trial. If inconsistent, initial acceleration will vary, resulting in different $a_2$ values throughout the trials. I will control this by releasing the structure from the same distance of 5cm (measured by a ruler perpendicular to structure's base). Moreover, I can anticipate minor inaccuracies because they will average out over the multiple trials.
+\\ \\ \underline{Structure’s material and dimensions.} The structure itself should stay durable by not bending the straws nor damaging it's structural integrity. A change in structural integrity could cause additional damping which would skew the damping effect, which would decrease $a_2$ irrespective of $m_p$. I can anticipate this problem by monitoring the consistency of $a_2$ throughout the trials. I will control this variable using durable materials and not overloading the TMD (max weight 40g).
 
 \subsection{Materials}
 
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+
 \begin{table}[h]
-\begin{tabular}{
->{\columncolor[HTML]{EFEFEF}}c 
->{\columncolor[HTML]{EFEFEF}}c lll}
-\cellcolor[HTML]{343434}{\color[HTML]{FFFFFF} \textbf{Material}} & \cellcolor[HTML]{343434}{\color[HTML]{FFFFFF} \textbf{Properties}}                                                       &  &  &  \\
-8x Metal nuts                                                    & Weighing 5g each.                                                                                                        &  &  &  \\
-\cellcolor[HTML]{C0C0C0}16x plastic straws                       & \cellcolor[HTML]{C0C0C0}Measuring 15cm each.                                                                             &  &  &  \\
-48x wooden toothpicks                                            & 4x fit perfectly in between two straws.                                                                                  &  &  &  \\
-\cellcolor[HTML]{C0C0C0}1x Copper wire                           & \cellcolor[HTML]{C0C0C0}Rigid; 6.21cm long                                                                                 &  &  &  \\
-9x screws                                                        & \begin{tabular}[c]{@{}c@{}}8x to attach straws to base and ceiling of structure, \\ 1x for pendulum.\end{tabular}        &  &  &  \\
-\cellcolor[HTML]{C0C0C0}2x wooden planks                         & \cellcolor[HTML]{C0C0C0}5cm x 5cm for base and ceiling of structure                                                      &  &  &  \\
-Accelerometer, connected to laptop and power supply              & \begin{tabular}[c]{@{}c@{}}Connected to Raspberry Pi at the top of the structure\\ $\pm 0.05 ms^{-2}$ uncertainty\end{tabular} &  &  &  \\ 
-\cellcolor[HTML]{C0C0C0}Plastic ruler                           & \cellcolor[HTML]{C0C0C0}15cm long; $\pm0.05cm$ uncertainty & & &
+\begin{tabular}{lllll}
+\multicolumn{1}{c}{\cellcolor[HTML]{343434}{\color[HTML]{FFFFFF} \textbf{Material}}}                                                                        & \multicolumn{1}{c}{\cellcolor[HTML]{343434}{\color[HTML]{FFFFFF} \textbf{Properties}}}                                                                                                   &  &  &  \\
+\cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 8x Metal nuts}                                                                                                & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} Weighing 5g each}                                                                                                                          &  &  &  \\
+\cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} 8x plastic straws}                                                                                            & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} Measuring 15cm each}                                                                                                                       &  &  &  \\
+\cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 32x wooden toothpicks}                                                                                        & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 4x to attach straws together}                                                                                                              &  &  &  \\
+\cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} 1x copper wire}                                                                                               & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} Rigid; 6.21cm long}                                                                                                                        &  &  &  \\
+\cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 10x metal screws}                                                                                             & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}4x for base, 4x for ceiling, 2x for pendulum, \\ 1x for fixing base to platform\end{tabular}}                   &  &  &  \\
+\cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} 3x synthetic wood planks}                                                                                     & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}2x 5cm by 5cm for base and ceiling of structure\\ 1x 15cm by 15cm for platform\end{tabular}}                    &  &  &  \\
+{\color[HTML]{000000} 2x metal handle for pendulum}                                                                                                         & {\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}Right-angled piece, screwed to ceiling, with holes \\ for screw to go through, copper wire around it\end{tabular}}                      &  &  &  \\
+\cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} 1x adjustable slider}                                                                                         & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} plastic slider to fix weights in place on pendulum}                                                                                        &  &  &  \\
+\cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}Raspberry Pi SenseHAT Accelerometer\\ Wirelessly connected to laptop\end{tabular}} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}Sensor attached to top of structure ($\pm0.05ms^{-2}$)\end{tabular}} &  &  &
 \end{tabular}
 \end{table}
 
 
-\section{Method} 
+\section{Method}
 
 
 \begin{figure}[h]
@@ -137,29 +156,23 @@ Accelerometer, connected to laptop and power supply              & \begin{tabula
 \begin{description}
     \item [Ensuring controlled variables before commencing] \phantom{.}
     \begin{itemize}
-        \item [1] Ensure that the structure dimensions are not altered and that the material is not deformed or damaged. Do so by tightening the straws together if loose.
-        \item [2] Displace the top of the structure by 5cm to the left by moving the top until it reaches the 5cm mark on the ruler perpendicular to the structure at rest. 
-        \item [3] Ensure that the pendulum is at rest before releasing the structure. This can be done by waiting until the pendulum is visibly not oscillating. 
-        \item [4] Run acceleration reader script on Raspberry Pi via SSH command from laptop. 
+        \item [3] Connect to Raspberry Pi through wireless Secure Shell Connection from laptop through terminal. Run accelerometer reader script to begin gathering raw data.
+        \item [2] Ensure that the structure dimensions are not altered and that the material is not deformed or bent. Tighten the straws together if loose to increase consistency and reliability of data. If the straws bend or the structure is leaning to one side, then replace with new straws.
+        \item [3] Displace the top of the structure until it reaches the wall, which by design of the platform is exactly $5cm$ away, removing likely human error possible when using ruler to displace thus maximising accuracy of results. Ensure that it is fully in contact with wall before releasing to maintain $\Delta d_1$ precise and accurate for control variables to be consistent across trials.
     \end{itemize}
     \item [Collecting Raw Data] \phantom{.}
     \begin{itemize}
-        \item [5] Release the structure. Avoid applying an additional force in the form of a push by letting go of structure gently. 
-        \item [6] Measure the amplitude of the acceleration graph ($a_2$ in $ms^{-2}$) during its second period of oscillation from the Raspberry Pi script.
-        \item [7] Repeat steps 1 to 6 for trial 2, 3, 4, 5. 
-        \item [8] Attach another screw to the bottom of the pendulum to increment the mass through the values 5, 10, 15, 20, 25, 30, 35, and 40 grams. Tighten to ensure they do not fall.
-        \item [9] Repeat steps 1-7 for each increment in step 8. 
-    \end{itemize}
-    \item [Processing Raw Data] \phantom{.}
-    \begin{itemize}
-        \item [10] Calculate the percentage of mechanical energy lost between first two periods of oscillation using Equation \ref{eqn:zeta}.
+        \item [4] Release the structure, avoid applying an additional force in the form of a push by letting go of structure gently and quickly. This maximises accuracy in the data because the initial acceleration is constant across trials.
+        \item [5] Record the measure of the amplitude in the acceleration graph ($a_2$ in $ms^{-2}$) during its second period of oscillation from the Raspberry Pi script displayed using data visualisation libraries. Use highest recorded acceleration during second period of oscillation in order to minimise human error when reading the data thus maximising accuracy.
+        \item [6] Repeat steps 1 to 6 for trial 2, 3, 4, 5.
+        \item [7] Attach another metal nut to the bottom of the pendulum to increment the mass through the values 5, 10, 15, 20, 25, 30, 35, and 40 grams. Tighten the slider to ensure they do not fall once fixed in place.
+        \item [8] Repeat steps 1-7 for each increment in step 7.
     \end{itemize}
 \end{description}
 
 \section{Risk assessment and ethical concerns}
 \begin{description}
-    \item[Ethical Concerns] This experiment is free of ethical concerns because it does not involve other beings.
-    \item[Safety Concerns] One safety concern could be the structure falling. As a result, the experimenter should proceed with caution when modifying the mass. However, the structure has strong integrity and lacks sharp or blunt objects, which makes it safe. Another safety concern could be the accelerometer because the Raspberry Pi could cause an electrical hazard like fire or electric shock. This risk is minimised due to the device's safe placement and extensive safety features. 
+    \item[Ethical and Safety Concerns] This experiment is free of ethical concerns because it does not involve other beings and is free of safety concerns as it is not dangerous for any parties involved.
     \item[Environmental Concerns] All materials are reusable except for the plastic straws which will be properly recycled when disposed of, implying limited environmental concerns. Therefore, this experiment has no significant risk or ethical concerns associated with it and carefully approaches any environmental concerns.
 \end{description}
 
@@ -179,5 +192,3 @@ Accelerometer, connected to laptop and power supply              & \begin{tabula
 \end{thebibliography}
 
 \end{document}
-
-
