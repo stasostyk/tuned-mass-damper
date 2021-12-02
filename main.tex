@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{amssymb}
+\usepackage{float}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{blindtext}
 
@@ -269,11 +270,91 @@ Moreover, \underline{standard deviation} of the processed data yields $\sigma =0
     \label{fig:6}
 \end{figure}
 
-The processed data follows a strong logarithmic relationship, as it takes an exponentially increasing amount of mass to dissipate larger percentages of mechanical energy. The logarithmic correlation relates $\zeta \propto \ln{m_p}$. Using software, the line of best fit is $$\zeta = 63.6 + 6.78\ln m_p$$ with a high coefficient of determination of $R^2 = 0.993$, which indicates that the line of best fit accurately resembles the data. Although the data points slightly deviate from the line of best fit, which is why $R^2$ is not quite 1 and why the points do not perfectly intersect with the equation, the values are very close and this difference can be accounted for by the \underline{uncertainty}. In fact, if we use the uncertainty calculated using $\Delta \zeta$ rather than $\frac{(Range)}{2}$, then the line of best fit falls between 7 of the 8 points' vertical error bars for the values of $m_p=[5,10,15,20,25,35,40]$, except for $m_p = 30g$, which indicates that this relationship strongly fits the data presented. Therefore, the line of best fit for $\zeta$ accurately reflects the trend of the data collected. 
+The processed data follows a strong logarithmic relationship, as it takes an exponentially increasing amount of mass to dissipate larger percentages of mechanical energy. The logarithmic correlation relates $\zeta = k + A\ln{m_p}$, where $k$ and $A$ are constants. Using software, the line of best fit is $$\zeta = 63.6 + 6.78\ln m_p$$ with a high coefficient of determination of $R^2 = 0.993$, which indicates that the line of best fit accurately resembles the data. Although the data points slightly deviate from the line of best fit, which is why $R^2$ is not quite 1 and why the points do not perfectly intersect with the equation, the values are very close and this difference can be accounted for by the \underline{uncertainty}. In fact, if we use the uncertainty calculated using $\Delta \zeta$ rather than $\frac{(Range)}{2}$, then the line of best fit falls between 7 of the 8 points' vertical error bars for the values of $m_p=[5,10,15,20,25,35,40]$, except for $m_p = 30g$, which indicates that this relationship strongly fits the data presented. Therefore, the line of best fit for $\zeta$ accurately reflects the trend of the data collected. \\
 
+
+The equation for $\zeta$ can be rearranged to solve for the percentage of mechanical energy damped because of the change in mass which gives a better understanding on the influence of the TMD, 
+
+$$ \zeta - 63.6\% = E_{TMD} = 6.78 \ln m_p$$
+
+Where $E_{TMD}$ represents the energy dissipated by the TMD. This value is proportional to $6.78 \ln m_p$, where the coefficient $6.78$ magnifies the effect of mass on $E_{TMD}$.
 
 %https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
+\newpage
 
+\section{Conclusion}
+
+The experiment measured the acceleration during the second peak of oscillation to deduce the percentage of mechanical energy dissipated between the first two consecutive periods. \textbf{The data does not support the hypothesis, which suggests a far more interesting conclusion about the nature of the damper}. Although it was hypothesized that since the kinetic energy of the damper is directly proportional to the mass then it would similarly be proportional to dissipated energy, $KE_p \propto m_p \propto \zeta$, \textbf{the experiment reveals that the dissipated mechanical energy is actually a logarithmic function} $\zeta = k + A\ln m_p$ for some constant $k$ and $A$. By measuring $a_2$ and processing the raw data into $\zeta$ using equation 1, which using software concluded the final equation
+
+$$\zeta (\%) = 63.6\% + 6.78\ln m_p$$
+
+Firstly, this conclusion suggests that $m_p$ and $\zeta$ increase logarithmically rather than linearly, \textbf{which translates into heavier TMDs providing increasingly less additional damping for larger masses}. This suggests that although the kinetic energy of the TMD increases linearly with mass, less energy overall is transferred into the TMD when the mass is higher, so the TMD moves less and thus absorbs less of the mechanical energy ($KE=\frac{1}{2}m_pv^2$, velocity $v$ is smaller). Moreover, it suggests that a lot of the kinetic energy of the TMD is transferred back into the kinetic energy of the structure, because the energy is dissipated primarily through the friction of the screw on the TMD which does not entirely dissipated the TMD's kinetic energy. \\
+
+
+Secondly, the constant $k=63.7\%$ indicates that a TMD only provides additional damping to the initial loss of internal energy through friction within the structure. This coincides with established knowledge that imperfect oscillators are damped as energy is transferred to its surroundings through heat and internal friction. Although this function is inaccurate as $m_p$ approaches 0 because $\zeta$ would approach $-\infty$, for small masses like $m_p = 1g$ the function demonstrates how a large percentage of mechanical energy is dispersed irregardless of the TMD. \\
+
+
+Therefore, the conclusion answers the research question in that \textbf{the mass of a Tuned Mass Damper affects the dissipation of mechanical energy in an oscillating structure in a logarithmic fashion, as for increasingly larger masses, less additional energy is dissipated.} Therefore, engineers would find it redundant to increase the mass past a threshold that would keep civilians safe inside a building during a skyscraper, because additional mass would not affect damping much yet would cost more to implement. Also interestingly, the experiment reveals how even a small Tuned Mass Damper can have a large effect on the dissipatoin of mechanical energy. Therefore, these methods should be pursued in skyscrapers that may not have much space for larger masses, because even relatively low masses can radically improve the safety of civilians in an oscillating skyscraper after an earthquake. 
+
+% deviate from hypothesis, because constant k means that there is an additional damping force on top of the TMD
+
+
+% logarithmic relationship as opposed to linear indicates that not all energy is transferred to the ball into kinetic energy, so notprop, and that 
+
+\section{Further Investigation}
+Further investigation into different types of dampers would assist in establishing architectural conventions that mitigate the effect of earthquakes and thereby save lives. Along with a tuned mass damper, there are other methods of damping worth investigating and comparing to the TMD to understand which one is more effective to be put in place. A tuned liquid damper, for instance, is another method of damping oscillations in buildings but has similarly little research done on it. It would be worth comparing these two methods, along with other damping systems, to evaluate the effectiveness of each.
+
+\section{Weaknesses and Improvements}
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+% \usepackage[normalem]{ulem}
+% \useunder{\uline}{\ul}{}
+\begin{table}[H]
+\hspace{-1.3cm}
+\begin{tabular}{
+>{\columncolor[HTML]{FFFFFF}}l 
+>{\columncolor[HTML]{FFFFFF}}l 
+>{\columncolor[HTML]{ECF4FF}}l }
+\hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{FFFFFF}\textbf{\begin{tabular}[c]{@{}l@{}}Source of error  \\ and effect\end{tabular}}}                                                                                                                   & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}\textbf{Significance for conclusion}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                              & \multicolumn{1}{l|}{\cellcolor[HTML]{DAE8FC}\textbf{\begin{tabular}[c]{@{}l@{}}Improvements \\ to reduce error\end{tabular}}}                                                                                                                                                                                                                                                                                                                                                                                                                                           \\ \hline
+\multicolumn{3}{|l|}{\cellcolor[HTML]{C0C0C0}{\ul Systematic errors influencing accuracy of data}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}l@{}}Deformation of structure \\ as plastic straws slightly\\ bent forwards by the end \\ of the experiment.\end{tabular}}                                                   & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}l@{}}Overall could have \\ artificially increased \\ the dissipated mechanical \\ energy as trials progressed \\ skewing the data towards \\ lower values than real \\ value. Not that significant \\ because trials in each \\ increment do not get \\ progressively lower, which \\ indicates that deformation \\ did not have a large effect.\end{tabular}}                                                                                                                               & \multicolumn{1}{l|}{\cellcolor[HTML]{ECF4FF}\begin{tabular}[c]{@{}l@{}}Replace the straws with long plastic \\ beams that would offer similar rigidity\\ -flexibility but without deformation \\ because of stronger structural integrity. \\ Moreover, this would remove the need \\ for toothpicks connecting the straws, \\ which would mean that the bending \\ would be dispersed evenly across the \\ beam and therefore approximate an \\ ideal oscillating structure.\end{tabular}}                                                                             \\ \hline
+\multicolumn{3}{l}{\cellcolor[HTML]{C0C0C0}{\ul Random errors influencing precision of data}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}l@{}}Accelerometer sensor\\ on Raspberry Pi had small \\ random spikes that deviated \\ from damped simple harmonic \\ motion, seen in Figure 5 at \\ t = 1.6s\end{tabular}} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}l@{}}Not largely significant\\  because the spikes are \\ small compared to the \\ amplitude of the damped \\ simple harmonic motion, \\ although could result in \\ the data being randomly \\ higher or normal than the \\ real value if a spike \\ occurred during a2.\end{tabular}}                                                                                                                                                                                                      & \multicolumn{1}{l|}{\cellcolor[HTML]{ECF4FF}\begin{tabular}[c]{@{}l@{}}Conduct experiment with more \\ precise sensor that would be more \\ consistent when measuring acceleration.\end{tabular}}                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}l@{}}Unintentional force applied \\ by hand when releasing structure\\ from the displaced position against \\ the wall.\end{tabular}}                                        & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}l@{}}Largely reduced by the \\ careful methodology used \\ as the structure was \\ released from behind held \\ against a wall, although \\ this was the most significant \\ source of error and likely \\ caused the outlier in trail 7 \\ row 1. This would artificially \\ increased the acceleration of \\ the object, as F = ma, which \\ would skew the results into \\ different initial acceleration \\ values and therefore higher \\ data gathered than real values.\end{tabular}} & \multicolumn{1}{l|}{\cellcolor[HTML]{ECF4FF}\begin{tabular}[c]{@{}l@{}}Use electro-mechanical earthquake \\ simulator that would shake the structure \\ by a set force instead of depending on \\ human contact.  Using a mechanical \\ oscillator which simulates an earthquake \\ with constant frequency and \\ displacement would greatly increase the \\ resemblance of the experiment to a real \\ earthquake, and would validate the data \\ with more precision due to increased \\ regulation over control variables and \\ no additional force.\end{tabular}} \\ \hline
+\end{tabular}
+\caption{\label{tbl:3}Table showing sources of error, their effect, and improvements}
+\end{table}
+
+\newpage
+
+\section{Strengths}
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[H]
+\begin{tabular}{|l|l|}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Strengths                                                                                                    & Effect                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
+\begin{tabular}[c]{@{}l@{}}Straws reinforced with\\ toothpicks were chosen for\\ the structure.\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\The use of straws with toothpicks allowed the structure to\\ bend without completely falling apart, thus imitating the\\ metal beams that sway gently in real-life skyscrapers.\\ This allowed for the building to sway enough to measure\\ the effect of the damper while maintaining structural\\ integrity, because the elastic property of straws applied\\ a restoring force to the original upright position, thus\\ producing damped simple harmonic motion.\\ \phantom{.}\end{tabular} \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+\begin{tabular}[c]{@{}l@{}}Thin, rigid copper wire was\\ use to hang the Tuned Mass\\ Damper.\end{tabular}   & \begin{tabular}[c]{@{}l@{}}\phantom{.}\\The copper wire was very thin and light which mitigated\\ the mass of the wire that is considered weightless in an\\ ideal pendulum equation, and therefore helped preserved\\ the center of mass where the metal nuts were hung.\\ Moreover, the rigidness of copper prevented the pendulum\\ from bending and thereby introducing new forces that\\ would otherwise prevent simple harmonic motion from\\ occurring.\\ \phantom{.}\end{tabular}                                              \\ \hline
+\end{tabular}
+\caption{\label{tbl:4}Table showing strengths of the experiment and their effects}
+\end{table}
+
+% straws reinforced with toothpicks were chosen
+% effect: rigidity-flexibility ratio of real building
+
+% rigid copper wire was used to hang the mass
+% effect: light so does not interfere with central mass of TMD yet rigid so does not bend or swing
 
 
 
