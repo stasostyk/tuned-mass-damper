@@ -33,8 +33,7 @@ citestyle=authoryear
 
 \title{Fighting earthquakes with pendulums: the Tuned Mass Damper}
 
-\author{Physics Internal Assessment
-}
+\author{Physics Internal Assessment}
 
 \date{September 2021}
 
@@ -47,6 +46,8 @@ citestyle=authoryear
 	{\scshape\Large Research Question: How does the mass of a Tuned Mass Damper affect the dissipation of mechanical energy in an oscillating structure? \par}
 	\vspace{1.5cm}
 	{\Large\itshape Physics Internal Assessment \par}
+	\vspace{0.5cm}
+	{\Large\itshape IB Number: CENSORED \par}
 
 	\vfill
 
@@ -78,7 +79,7 @@ An earthquake repeatedly displaces the base of a structure ("How Do..."). Changi
 
 \subsection{The structure}
 
-Internal reinforcement of the structure applies a restoring force, $F_s$ (Newtons), to bring the structure back to vertical equilibrium, a force denoted by $F_s \propto -\Delta d$. A force opposite and proportional to displacement oscillates the structure around its equilibrium, denoted by the vertical red line in Figure 2, resulting in simple harmonic motion. 
+Internal reinforcement of the structure applies a restoring force, $F_s$ (Newtons), to bring the structure back to vertical equilibrium, a force denoted by $F_s \propto -\Delta d$. A force opposite and proportional to displacement oscillates the structure around its equilibrium, denoted by the vertical red line in Figure 2, resulting in simple harmonic motion.
 
 
 
@@ -96,7 +97,7 @@ As the structure oscillates, some of its mechanical energy, $ME$ (Joules), is tr
 \section{Deriving The Formula}
 
 To measure the total mechanical energy in the oscillating structure, I can use $ME=\frac{1}{2}k\Delta d ^2+\frac{1}{2}mv_2$ (Joules), the sum of its kinetic and potential energy, with some unknown constant $k$, mass $m$, and velocity $v$. However, at maximum displacement $\Delta d_1$ and $\Delta d_2$, there is no kinetic energy, simplifying the equation to $ME=\frac{1}{2}k \Delta d^2$. To measure the percentage loss of mechanical energy due to damping, we can use the equation $$\frac{ME_1-ME_2}{ME_1}\times100\%$$ which cancels out the unknown constant $\frac{1}{2}k$ resulting in the neat formula $\zeta=\frac{\Delta d_1^2-\Delta d_2^2}{\Delta d_1^2}\times100\%$ where $\zeta$ (\%) is the percentage of lost mechanical energy.
-$\Delta d_1$ is a constant variable, equal to the initial displacement of the structure as a result of the earthquake. $\Delta d_2$ is the maximum displacement of the structure during its second period of oscillation, which allows me to measure the immediate loss in mechanical energy between the first two consecutive periods of oscillation. I can not measure $\Delta d_2$ in meters because it oscillates too fast for a human to measure, which is why I will use an accelerometer. The relationship between acceleration and displacement is $a=\omega ^2 \Delta d$ where $\omega=2\pi f$, where $f$ is a constant, representing the frequency of the building’s oscillation. I can therefore use $$\Delta d_2=\frac{a_2}{4\pi^2f^2}$$ where $a_2$ is the maximum acceleration of the structure in the second period of oscillation. This results in the final equation for $\zeta$ (Equation 1, \% of ME lost between first two consecutive periods) as: 
+$\Delta d_1$ is a constant variable, equal to the initial displacement of the structure as a result of the earthquake. $\Delta d_2$ is the maximum displacement of the structure during its second period of oscillation, which allows me to measure the immediate loss in mechanical energy between the first two consecutive periods of oscillation. I can not measure $\Delta d_2$ in meters because it oscillates too fast for a human to measure, which is why I will use an accelerometer. The relationship between acceleration and displacement is $a=\omega ^2 \Delta d$ where $\omega=2\pi f$, where $f$ is a constant, representing the frequency of the building’s oscillation. I can therefore use $$\Delta d_2=\frac{a_2}{4\pi^2f^2}$$ where $a_2$ is the maximum acceleration of the structure in the second period of oscillation. This results in the final equation for $\zeta$ (Equation 1, \% of ME lost between first two consecutive periods) as:
 
 \begin{equation}
     \label{eqn:zeta}
@@ -104,7 +105,7 @@ $\Delta d_1$ is a constant variable, equal to the initial displacement of the st
 \end{equation}
 
 \section{Hypothesis}
-I hypothesise that the percentage loss in mechanical energy $\zeta$ (\%) increases linearly as $m_p$ increases because the larger mass of the Tuned Mass Damper can absorb more kinetic energy, since kinetic energy is dependent on mass, as seen in the formula $KE_p=\frac{1}{2}m_pv^2$. Hence, this could achieve the relationship $\zeta \propto m_p$ where the mass is proportional to the percentage of mechanical energy dissipated. 
+I hypothesise that the percentage loss in mechanical energy $\zeta$ (\%) increases linearly as $m_p$ increases because the larger mass of the Tuned Mass Damper can absorb more kinetic energy, since kinetic energy is dependent on mass, as seen in the formula $KE_p=\frac{1}{2}m_pv^2$. Hence, this could achieve the relationship $\zeta \propto m_p$ where the mass is proportional to the percentage of mechanical energy dissipated.
 
 \section{Setting up the Experiment}
 
@@ -119,17 +120,17 @@ I had to build the structure using only materials in my garage while maintaining
 
 For the TMD, I constructed a metal pendulum made out of old wire hanging on a screw tightened together with $90^{\circ}$ metal mantles to cause friction (hence damping) when the TMD swings \autocite{lourenco}. To modify the mass $m_p$, I will place standard $5g$ circular metal nuts into the wire, then fix them in place using a plastic slider that tightens around the wire. Finally, I had to find the constant value for the natural frequency of the swaying structure $(f)$ to match it with the frequency of the pendulum so that both oscillate in the same time period, thus creating damped simple harmonic motion. To do this, I offset the structure by 5.00cm, released, and measured the period, $T=(0.700\pm 0.005)s$, then solved for frequency, $f=\frac{1}{0.700s}=(1.43\pm0.01)Hz$. To synchronise the frequency of the TMD with $f$, I modified the length of the pendulum using $L=\frac{g}{4\pi^2f^2}$, derived from the period of a pendulum. $$\frac{1}{f}=2\pi\sqrt{\frac{L}{g}} \rightarrow L=(0.122\pm0.002)m$$ where $g$ is the gravitational constant ($9.81 \frac{m}{s^2}$). Hence, the TMD will oscillate at the same frequency as the structure but in the other direction, thereby tuning the mass damper \autocite{connor}. Lastly, I will attach a Raspberry Pi microcomputer to the top of the structure where I will measure acceleration using the SenseHat accelerometer sensor, where I will program a script to collect and store the data.
 
-\subsection{Variables} 
+\subsection{Variables}
 
 \textbf{Independent variable: }
 Mass of the Tuned Mass Damper $(m_p)$. Modified with metal nuts. Increments over: 5, 10, 15, 20, 25, 30, 35, and 40 grams.
 \\ \\
-\textbf{Dependent variable:} 
+\textbf{Dependent variable:}
 Second crust of structure's acceleration (maximum acceleration in second oscillation) $(a_2)$.
 \\ \\
 \textbf{Controlled Variables:}
 \\ \underline{Initial displacement} $\Delta d_1$ of the top of the structure. Must stay constant to simulate constant magnitude of earthquake in each trial. If inconsistent, initial acceleration will vary, resulting in different $a_2$ values throughout the trials. I will control this by releasing the structure from the same distance of 5.00cm (measured by placing top of structure parallel to wall). Moreover, I can anticipate minor inaccuracies because they will average out over the multiple trials.
-\\ \\ \underline{Structure’s material and dimensions.} The structure itself should stay durable by not bending the straws nor damaging its structural integrity. A change in structural integrity could cause additional damping which would skew the damping effect, which would decrease $a_2$ irrespective of $m_p$. I can anticipate this problem by monitoring the consistency of $a_2$ throughout the trials. I will control this variable using durable materials and not overloading the TMD (max weight 40g). 
+\\ \\ \underline{Structure’s material and dimensions.} The structure itself should stay durable by not bending the straws nor damaging its structural integrity. A change in structural integrity could cause additional damping which would skew the damping effect, which would decrease $a_2$ irrespective of $m_p$. I can anticipate this problem by monitoring the consistency of $a_2$ throughout the trials. I will control this variable using durable materials and not overloading the TMD (max weight 40g).
 
 \subsection{Materials}
 
@@ -148,12 +149,12 @@ Second crust of structure's acceleration (maximum acceleration in second oscilla
 \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} 3x synthetic wood planks}                                                                                     & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}2x 5cm by 5cm for base and ceiling of structure\\ 1x 15cm by 15cm for platform\end{tabular}}                    &  &  &  \\
 {\color[HTML]{000000} 2x metal handle for pendulum}                                                                                                         & {\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}Right-angled piece, screwed to ceiling, with holes \\ for screw to go through, copper wire around it\end{tabular}}                      &  &  &  \\
 \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} 1x adjustable slider}                                                                                         & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} plastic slider to fix weights in place on pendulum}                                                                                        &  &  &  \\
-\cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}Raspberry Pi SenseHAT Accelerometer\\ wirelessly connected to laptop\end{tabular}} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}Sensor attached to top of structure ($\pm0.001ms^{-2}$)\end{tabular}} &  &  & 
+\cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}Raspberry Pi SenseHAT Accelerometer\\ wirelessly connected to laptop\end{tabular}} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}Sensor attached to top of structure ($\pm0.001ms^{-2}$)\end{tabular}} &  &  &
 \end{tabular}
 \end{table}
 
 
-\section{Method} 
+\section{Method}
 
 
 \begin{figure}[h]
@@ -165,15 +166,15 @@ Second crust of structure's acceleration (maximum acceleration in second oscilla
 \begin{enumerate}
 
 \item Ensure that the structure dimensions are not altered by checking if the structure is visually deformed or bent. Tighten the straws together if loose to increase consistency and reliability of data. If the straws bend or the structure is leaning to one side, then replace with new straws.
-\item Connect to Raspberry Pi through wireless Secure Shell Connection from laptop through terminal \autocite{ssh}. Run custom accelerometer reader program to begin gathering raw data (see in Appendix B).  
-\item Displace the top of the structure until it reaches the wall, which by design of the platform is exactly $5.00cm$ away, removing likely human error possible when using ruler to displace thus maximizing accuracy of results. Ensure that it is fully in contact with wall before releasing to maintain $\Delta d_1$ precise and accurate for control variables to be consistent across trials. 
+\item Connect to Raspberry Pi through wireless Secure Shell Connection from laptop through terminal \autocite{ssh}. Run custom accelerometer reader program to begin gathering raw data.
+\item Displace the top of the structure until it reaches the wall, which by design of the platform is exactly $5.00cm$ away, removing likely human error possible when using ruler to displace thus maximizing accuracy of results. Ensure that it is fully in contact with wall before releasing to maintain $\Delta d_1$ precise and accurate for control variables to be consistent across trials.
 
-\item Release the structure, avoid applying an additional force in the form of a push by letting go of structure gently and quickly. This maximizes accuracy in the data because the initial acceleration is constant across trials. 
+\item Release the structure, avoid applying an additional force in the form of a push by letting go of structure gently and quickly. This maximizes accuracy in the data because the initial acceleration is constant across trials.
 \item After the structure oscillates back and forth approximately twice, stop recording program, download data to computer from Raspberry Pi microcomputer via connection, then disconnect.
-\item Record the measure of the amplitude in the acceleration graph ($a_2$ in $ms^{-2}$) during its second period of oscillation displayed using my custom Python program using data visualization libraries (detailed later, consider Appendix C). Use highest recorded acceleration during second period of oscillation in order to minimize human error when reading the data thus maximizing accuracy.
-\item Repeat steps 1 to 6 for trial 2, 3, 4, 5, 6, 7. 
+\item Record the measure of the amplitude in the acceleration graph ($a_2$ in $ms^{-2}$) during its second period of oscillation displayed using my custom Python program using data visualization libraries. Use highest recorded acceleration during second period of oscillation in order to minimize human error when reading the data thus maximizing accuracy.
+\item Repeat steps 1 to 6 for trial 2, 3, 4, 5, 6, 7.
 \item Detach slider from pendulum, attach another metal nut to the bottom of the pendulum to increment the mass through the values 5, 10, 15, 20, 25, 30, 35, and 40 grams. Tighten the slider to ensure they do not fall once fixed in place.
-\item Repeat steps 1-8 for each increment in step 8. 
+\item Repeat steps 1-8 for each increment in step 8.
 
 \end{enumerate}
 
@@ -187,22 +188,22 @@ Second crust of structure's acceleration (maximum acceleration in second oscilla
 
 \begin{table}[H]
 \begin{tabular}{ccccccccc}
-\rowcolor[HTML]{FFFFFF} 
+\rowcolor[HTML]{FFFFFF}
 \cellcolor[HTML]{EFEFEF}{\color[HTML]{9B9B9B} }       & \multicolumn{7}{c}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}c@{}}Acceleration at Second Crest of Acceleration Graph\\ $ms^{-2}$\\ $\Delta ms^{-2} = \pm 0.001$\end{tabular}} & \cellcolor[HTML]{EFEFEF}                                              \\
-\rowcolor[HTML]{EFEFEF} 
+\rowcolor[HTML]{EFEFEF}
 \begin{tabular}[c]{@{}c@{}}Mass ($m_p$)\\ g\\ $\Delta g=\pm 0.01$\end{tabular} & Trial 1              & Trial 2              & Trial 3              & Trial 4              & Trial 5             & Trial 6             & Trial 7             & \begin{tabular}[c]{@{}c@{}}Mean Acceleration ($a_2$)\\ $ms^{-2}$\end{tabular} \\
 5.00                                                     & 2.013                & 2.019                & 2.022                & 2.015                & 2.023               & 2.021               & \textbf{2.054}               & 2.019 $\pm0.005$                                                                \\
-\rowcolor[HTML]{EFEFEF} 
+\rowcolor[HTML]{EFEFEF}
 10.00                                                    & 1.856                & 1.851                & 1.862                & 1.854                & 1.861               & 1.865               & 1.858               & 1.858 $\pm0.007$                                                                 \\
 15.00                                                    & 1.733                & 1.735                & 1.737                & 1.739                & 1.730                & 1.741               & 1.729               & 1.735 $\pm0.006$                                                                 \\
-\rowcolor[HTML]{EFEFEF} 
+\rowcolor[HTML]{EFEFEF}
 20.00                                                    & 1.632                & 1.631                & 1.630                 & 1.634                & 1.625               & 1.634               & 1.642               & 1.633 $\pm0.008$                                                               \\
 25.00                                                    & 1.529                & 1.530                 & 1.532                & 1.520                 & 1.519               & 1.531               & 1.533               & 1.528 $\pm0.007$                                                                \\
-\rowcolor[HTML]{EFEFEF} 
+\rowcolor[HTML]{EFEFEF}
 30.00                                                    & 1.450                & 1.453                 & 1.444                & 1.439                & 1.437               & 1.439               & 1.437               & 1.443 $\pm0.008$                                                                \\
 35.00                                                    & 1.401                & 1.412                & 1.396                & 1.398                & 1.395               & 1.409               & 1.404               & 1.402 $\pm0.008$                                                                \\
-\rowcolor[HTML]{EFEFEF} 
-40.00                                                    & 1.385                & 1.381                & 1.369                & 1.384                & 1.376               & 1.380                & 1.382               & 1.380 $\pm0.008$                                                               
+\rowcolor[HTML]{EFEFEF}
+40.00                                                    & 1.385                & 1.381                & 1.369                & 1.384                & 1.376               & 1.380                & 1.382               & 1.380 $\pm0.008$
 \end{tabular}
 \caption{\label{tbl:1}Raw data showing mass(g) and acceleration($ms^{-2}$)}
 \end{table}
@@ -212,11 +213,11 @@ Second crust of structure's acceleration (maximum acceleration in second oscilla
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 
 
-Collected data (in Table 1) is gathered to four significant figures with uncertainty $\pm0.001ms^{-2}$. The mean acceleration is calculated in the rightmost column by adding all trials and dividing by 7, with uncertainty calculated using $\frac{(Range)}{2}$. The calculated uncertainty is larger than the device's uncertainty, which reflects human error caused by minor variations in control variables, although it is low as it remains at three decimal places and is averaged out throughout the 7 trials for increased precision. 
+Collected data (in Table 1) is gathered to four significant figures with uncertainty $\pm0.001ms^{-2}$. The mean acceleration is calculated in the rightmost column by adding all trials and dividing by 7, with uncertainty calculated using $\frac{(Range)}{2}$. The calculated uncertainty is larger than the device's uncertainty, which reflects human error caused by minor variations in control variables, although it is low as it remains at three decimal places and is averaged out throughout the 7 trials for increased precision.
 \\
 
 
-However, trial 7 of the first increment highlighted in bold, $2.054$, is an \textbf{outlier} as it falls above the upper limit of the interquartile range, $$1.5\times IQR+Q_3=1.5\times0.008+2.023=\underline{2.035}$$ Therefore, it will not be used in any calculations as to maintain high precision throughout the analysis. This could have been caused by an additional force placed onto the structure when releasing it from $\Delta d_1$. There are no other outliers in the data. 
+However, trial 7 of the first increment highlighted in bold, $2.054$, is an \textbf{outlier} as it falls above the upper limit of the interquartile range, $$1.5\times IQR+Q_3=1.5\times0.008+2.023=\underline{2.035}$$ Therefore, it will not be used in any calculations as to maintain high precision throughout the analysis. This could have been caused by an additional force placed onto the structure when releasing it from $\Delta d_1$. There are no other outliers in the data.
 \\
 
 
@@ -235,44 +236,51 @@ With the $a_2$ values retrieved from the acceleration versus time graph of each 
 
 \begin{table}[h]
 \begin{tabular}{cccccccccc}
-\rowcolor[HTML]{FFFFFF} 
+\rowcolor[HTML]{FFFFFF}
 \cellcolor[HTML]{EFEFEF}{\color[HTML]{9B9B9B} }       & \multicolumn{8}{c}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}c@{}}Percentage of Dissipated Mechanical Energy $\zeta$\\ $\%$\end{tabular}}                                                                                                                                                                                                                                                                               & \cellcolor[HTML]{EFEFEF}                                 \\
-\rowcolor[HTML]{EFEFEF} 
+\rowcolor[HTML]{EFEFEF}
 \begin{tabular}[c]{@{}c@{}}Mass ($m_p$)\\ g \\ $\Delta g=\pm 0.01$\end{tabular} & Trial 1                                          & Trial 2                                          & Trial 3                                          & Trial 4                                          & Trial 5                                          & Trial 6                                          & Trial 7                                          & \begin{tabular}[c]{@{}c@{}}$\zeta$ Uncertainty\\ $\Delta \%$\end{tabular} & \begin{tabular}[c]{@{}c@{}}Mean $\zeta$\\ $\%$\end{tabular} \\
 5.00                                                  & 75                                             & 75                                             & 75                                             & 75                                             & 75                                             & 75                                             & \cellcolor[HTML]{C0C0C0}                         & $\pm 1$                                                          & 75 $\pm 1$                                                     \\
-\rowcolor[HTML]{EFEFEF} 
+\rowcolor[HTML]{EFEFEF}
 10.00                                                 & 79                                             & 79                                             & 79                                             & 79                                             & 79                                             & 79                                             & 79                                             & $\pm 1$                                                          & 79  $\pm 1$                                                    \\
 15.00                                                 & 82                                             & 82                                             & 82                                             & 81                                             & 82                                             & 81                                             & 82                                             & $\pm 1$                                                          & 82 $\pm 1$                                                     \\
-\rowcolor[HTML]{EFEFEF} 
+\rowcolor[HTML]{EFEFEF}
 20.00                                                 & 83.7                                             & 83.7                                             & 83.7                                             & 83.6                                             & 83.8                                             & 83.6                                             & 83.5                                             & $\pm 0.9$                                                          & 83.6  $\pm 0.9$                                                    \\
 25.00                                                 & 85.7                                             & 85.6                                             & 85.6                                             & 85.8                                             & 85.8                                             & 85.6                                             & 85.6                                             & $\pm 0.8$                                                          & 85.7 $\pm 0.8$                                                     \\
-\rowcolor[HTML]{EFEFEF} 
+\rowcolor[HTML]{EFEFEF}
 30.00                                                 & 87.1                                             & 87.0                                             & 87.2                                             & 87.3                                             & 87.3                                             & 87.3                                             & 87.3                                             & $\pm 0.7$                                                          & 87.2 $\pm 0.7$                                                     \\
 35.00                                                 & \multicolumn{1}{r}{88.0}                         & \multicolumn{1}{r}{87.8}                         & \multicolumn{1}{r}{88.0}                         & \multicolumn{1}{r}{88.0}                         & \multicolumn{1}{r}{88.1}                         & \multicolumn{1}{r}{87.8}                         & \multicolumn{1}{r}{87.9}                         & $\pm 0.7$                                                          & 87.9 $\pm 0.7$                                                     \\
-\rowcolor[HTML]{EFEFEF} 
-40.00                                                 & \multicolumn{1}{r}{\cellcolor[HTML]{EFEFEF}88.2} & \multicolumn{1}{r}{\cellcolor[HTML]{EFEFEF}88.3} & \multicolumn{1}{r}{\cellcolor[HTML]{EFEFEF}88.5} & \multicolumn{1}{r}{\cellcolor[HTML]{EFEFEF}88.2} & \multicolumn{1}{r}{\cellcolor[HTML]{EFEFEF}88.4} & \multicolumn{1}{r}{\cellcolor[HTML]{EFEFEF}88.3} & \multicolumn{1}{r}{\cellcolor[HTML]{EFEFEF}88.3} & $\pm 0.7$                                                          & 88.3 $\pm 0.7$                                                    
+\rowcolor[HTML]{EFEFEF}
+40.00                                                 & \multicolumn{1}{r}{\cellcolor[HTML]{EFEFEF}88.2} & \multicolumn{1}{r}{\cellcolor[HTML]{EFEFEF}88.3} & \multicolumn{1}{r}{\cellcolor[HTML]{EFEFEF}88.5} & \multicolumn{1}{r}{\cellcolor[HTML]{EFEFEF}88.2} & \multicolumn{1}{r}{\cellcolor[HTML]{EFEFEF}88.4} & \multicolumn{1}{r}{\cellcolor[HTML]{EFEFEF}88.3} & \multicolumn{1}{r}{\cellcolor[HTML]{EFEFEF}88.3} & $\pm 0.7$                                                          & 88.3 $\pm 0.7$
 \end{tabular}
 \caption{\label{tbl:2}Processed data showing mass(g) and percentage of dissipated mechanical energy($\%$)}
 \end{table}
 
 
 The Percentage of Dissipated Mechanical Energy is calculated using $\zeta=\frac{\Delta d_1^2-(\frac{a_2}{4\pi^2f^2})^2}{\Delta d_1^2} \times 100\%$ \\
-and then formatted to the decimal places of its uncertainty, seen in Table 2. 
-For example, trial 1 at $m_p=5.00g$ is calculated using: 
+and then formatted to the decimal places of its uncertainty, seen in Table 2.
+For example, trial 1 at $m_p=5.00g$ is calculated using:
 $$\zeta=\frac{0.05^2-(\frac{2.013}{4\pi^2\times1.43^2})^2}{0.05^2} \times 100\% = 75.\underline{13}=75 \% \; \textrm{  (no decimal place)}$$
-To calculate uncertainty of $\zeta$, the following formula is derived from uncertainty rules applied to $\zeta$, where $a_2$ is the mean acceleration (raw data). To save space, the derivation can be seen in Appendix A, but is simply the uncertainty rules applied to $\zeta$. However, the TMD's frequency varied between recorded trials. This inconsistency adds to the uncertainty of the processed data because the equation for $\zeta$ assumes a constant frequency $f$. The values varied between $1.41Hz$ and $1.45Hz$, therefore the uncertainty of the frequency will be modified to $\Delta f = \frac{(Range)}{2} = \frac{1.45-1.41}{2} = 0.02Hz$. Now, the uncertainty can be calculated:
-$$f \pm \Delta f = (1.43 \pm 0.02)Hz, \; \; \Delta a_2 = \pm 0.001ms^{-2}, \; \; \Delta d_1 = 0.05m$$
-$$\therefore \Delta \zeta = (\frac{100}{16\pi^4\Delta {d_1}^2})\times(\frac{2a_2 \Delta a_2}{f^4} + \frac{4{a_2}^2\Delta f}{f^5})$$
 
-Then, to calculate the uncertainty of the same example data point:
+To calculate the uncertainty of $\zeta$, we can apply the uncertainty rules for addition, multiplication, and exponents of uncertainties to derive an equation for uncertainty. Following these rules, we first ignore all terms without uncertainties, producing the modified equation:
+$$\zeta \rightarrow (\frac{100}{16\pi^4\Delta {d_1}^2}) \times \frac{(a_2 \pm \Delta a_2)^2}{(f \pm \Delta f)^4}$$
+Then we apply the uncertainty rules to this equation, producing the final equation for the uncertainty of $\zeta$, defined as $\Delta \zeta$:
+$$ \therefore \Delta \zeta = (\frac{100}{16\pi^4\Delta {d_1}^2})\times(\frac{2a_2 \Delta a_2}{f^4} + \frac{4{a_2}^2\Delta f}{f^5})$$
+However, the TMD's frequency varied between recorded trials. This inconsistency adds to the uncertainty of the processed data because the equation for $\zeta$ assumes a constant frequency $f$. The values varied between $1.41Hz$ and $1.45Hz$, therefore the uncertainty of the frequency will be modified to $\Delta f = \frac{(Range)}{2} = \frac{1.45-1.41}{2} = 0.02Hz$. Now, the equation for $\Delta \zeta$ can be substituted with the following values:
+$$f \pm \Delta f = (1.43 \pm 0.02)Hz, \; \; \Delta a_2 = \pm 0.001ms^{-2}, \; \; \Delta d_1 = 0.05m$$
+
+
+Then, to calculate the uncertainty of the same example data point as before:
 $$\Delta \zeta = (\frac{100}{16\pi^40.05^2})\times(\frac{2\times2.013 \times0.001}{1.43^4} + \frac{4\times2.013^2\times0.02}{1.43^5})=1.4\% = 1\% \; \textrm{  (one significant figure)}$$
 
 
 
-The uncertainty decreases over higher values of $m_p$ since acceleration decreases, although it is much larger than in the raw data since acceleration is squared and the uncertainty of the frequency is considered. Consequently, the first three increments are formatted to zero decimal places to account for the larger uncertainty, whereas the later trials are formatted to one decimal place because of lower uncertainty. While it may seem like precision is lost because of one less significant figure, the differences across means are significantly larger in the first three increments which accounts for the increase in uncertainty. Therefore, precision is still maintained. Additionally, the uncertainty turns out to equal the same value across each increment, hence it is a column in the data table to improve readability. The mean percentage of dissipated mechanical energy is calculated by averaging the trials, however, since uncertainty is constant throughout each trial, the same uncertainty will be used in the mean. This ensures that accuracy is not artificially increased by using the mean of the data. 
+The uncertainty decreases over higher values of $m_p$ since acceleration decreases, although it is much larger than in the raw data since acceleration is squared and the uncertainty of the frequency is considered. Consequently, the first three increments are formatted to zero decimal places to account for the larger uncertainty, whereas the later trials are formatted to one decimal place because of lower uncertainty. While it may seem like precision is lost because of one less significant figure, the differences across means are significantly larger in the first three increments which accounts for the increase in uncertainty. Therefore, precision is still maintained. Additionally, the uncertainty turns out to equal the same value across each increment, hence it is a column in the data table to improve readability. The mean percentage of dissipated mechanical energy is calculated by averaging the trials, however, since uncertainty is constant throughout each trial, the same uncertainty will be used in the mean. This ensures that accuracy is not artificially increased by using the mean of the data.
+\\
 
-\newpage
-Moreover, standard deviation of the processed data yields $\sigma =0.1\%$ or less for each increment of $m_p$ (hence it is not shown in a data table to avoid repetition). This value is very low, thus further validating the precision of the processed data. This data can now be graphed to understand its trend. 
+
+
+Moreover, standard deviation of the processed data yields $\sigma =0.1\%$ or less for each increment of $m_p$ (hence it is not shown in a data table to avoid repetition). This value is very low, thus further validating the precision of the processed data. This data can now be graphed to understand its trend.
 
 
 \begin{figure}[h]
@@ -286,7 +294,7 @@ Moreover, standard deviation of the processed data yields $\sigma =0.1\%$ or les
 The processed data follows a strong logarithmic relationship, as it takes an exponentially increasing amount of mass to dissipate larger percentages of mechanical energy. The logarithmic correlation relates $\zeta = k + A\ln{m_p}$, where $k$ and $A$ are constants. Using software, the line of best fit is $$\zeta = 64 + 6.69\ln m_p$$ with a high coefficient of determination of $R^2 = 0.996$, which indicates that the line of best fit accurately resembles the data. Moreover, the line of best fit passes through every error bar, which reflects that the data is precise. This would not have been the case if the processed data uncertainty would have been calculated using the mean of the trials, which reflects how accounting for discrepancy in frequency was important and properly taken into account in the previous section.\\
 
 
-The equation for $\zeta$ can be rearranged to solve for the percentage of mechanical energy damped because of the change in mass which gives a better understanding on the influence of the TMD, 
+The equation for $\zeta$ can be rearranged to solve for the percentage of mechanical energy damped because of the change in mass which gives a better understanding on the influence of the TMD,
 
 $$ \zeta - 64\% = E_{TMD} = 6.69 \ln m_p$$
 
@@ -307,12 +315,12 @@ Firstly, this conclusion suggests that $m_p$ and $\zeta$ increase logarithmicall
 Secondly, the constant $k=64\%$ indicates that a TMD only provides additional damping to the initial loss of internal energy through friction within the structure. This coincides with established knowledge that imperfect oscillators are damped as energy is transferred to their surroundings through heat and internal friction. Although this function is inaccurate as $m_p$ approaches 0 because $\zeta$ would approach $-\infty$, for small masses like $m_p = 1g$ the function demonstrates how a large percentage of mechanical energy is dispersed regardless of the TMD. \\
 
 
-Therefore, the conclusion answers the research question in that the mass of a Tuned Mass Damper affects the dissipation of mechanical energy in an oscillating structure in a logarithmic fashion, as for increasingly larger masses, less additional energy is dissipated. Therefore, engineers would find it redundant to increase the mass past a threshold that would keep civilians safe inside a building during a skyscraper, because additional mass would not affect damping much yet would cost more to implement. Also interestingly, the experiment reveals how even a small Tuned Mass Damper can have a large effect on the dissipation of mechanical energy. Therefore, these methods should be pursued in skyscrapers that may not have much space for larger masses, because even relatively low masses can radically improve the safety of civilians in an oscillating skyscraper after an earthquake. 
+Therefore, the conclusion answers the research question in that the mass of a Tuned Mass Damper affects the dissipation of mechanical energy in an oscillating structure in a logarithmic fashion, as for increasingly larger masses, less additional energy is dissipated. Therefore, engineers would find it redundant to increase the mass past a threshold that would keep civilians safe inside a building during a skyscraper, because additional mass would not affect damping much yet would cost more to implement. Also interestingly, the experiment reveals how even a small Tuned Mass Damper can have a large effect on the dissipation of mechanical energy. Therefore, these methods should be pursued in skyscrapers that may not have much space for larger masses, because even relatively low masses can radically improve the safety of civilians in an oscillating skyscraper after an earthquake.
 
 % deviate from hypothesis, because constant k means that there is an additional damping force on top of the TMD
 
 
-% logarithmic relationship as opposed to linear indicates that not all energy is transferred to the ball into kinetic energy, so notprop, and that 
+% logarithmic relationship as opposed to linear indicates that not all energy is transferred to the ball into kinetic energy, so notprop, and that
 
 \section{Further Investigation}
 Further investigation into different types of dampers would assist in establishing architectural conventions that mitigate the effect of earthquakes and thereby save lives. Along with a tuned mass damper, there are other methods of damping worth investigating and comparing to the TMD to understand which one is more effective to be put in place. A tuned liquid damper, for instance, is another method of damping oscillations in buildings using sloshing liquids, but has similarly little research done on it \autocite{bozer}. It would be worth comparing these two methods, along with other damping systems, to evaluate the effectiveness of each. This would strengthen the conclusion made by this investigation as maybe other systems are less effective and therefore TMD's with increasingly higher mass are the only way to provide effective additional damping.
@@ -327,8 +335,8 @@ Further investigation into different types of dampers would assist in establishi
 \begin{table}[H]
 \hspace{-1.3cm}
 \begin{tabular}{
->{\columncolor[HTML]{FFFFFF}}l 
->{\columncolor[HTML]{FFFFFF}}l 
+>{\columncolor[HTML]{FFFFFF}}l
+>{\columncolor[HTML]{FFFFFF}}l
 >{\columncolor[HTML]{ECF4FF}}l }
 \hline
 \multicolumn{1}{|l|}{\cellcolor[HTML]{FFFFFF}\textbf{\begin{tabular}[c]{@{}l@{}}Source of error  \\ and effect\end{tabular}}}                                                                                                                   & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}\textbf{Significance for conclusion}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                              & \multicolumn{1}{l|}{\cellcolor[HTML]{DAE8FC}\textbf{\begin{tabular}[c]{@{}l@{}}Improvements \\ to reduce error\end{tabular}}}                                                                                                                                                                                                                                                                                                                                                                                                                                           \\ \hline
@@ -352,7 +360,7 @@ Further investigation into different types of dampers would assist in establishi
 \centering
 \begin{tabular}{|l|l|}
 \hline
-\rowcolor[HTML]{9B9B9B} 
+\rowcolor[HTML]{9B9B9B}
 \textbf{Strengths}                                                                                                                                                                                                                         & \cellcolor[HTML]{67FD9A}\textbf{Effect on Conclusion}                                                                                                                                                                                                                                                                                                                             \\ \hline
 \begin{tabular}[c]{@{}l@{}}Digital sensor was used to \\ record accelerometer data.\end{tabular}                                                                                                                                           & \begin{tabular}[c]{@{}l@{}}The structure moved significantly faster than \\ a human could detect and measure, therefore \\ using a digital sensor improved the precision \\ and accuracy of the data and conclusion.\end{tabular}                                                                                                                                                 \\ \hline
 \begin{tabular}[c]{@{}l@{}}Accelerometer was attached \\ to 'RPi 3' microcomputer \\ which allowed for simple \\ data extraction using a WiFi-\\ enabled secure connection \\ without need for disassembly\\ to extract data.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Remote data extraction allowed me to not\\ physically interfere with the TMD structure and \\ thereby not alter any controlled variables like \\ bending, hence increasing precision.\end{tabular}                                                                                                                                                     \\ \hline
@@ -373,89 +381,4 @@ Further investigation into different types of dampers would assist in establishi
 \printbibliography
 \end{spacing}
 
-
-\newpage
-\section{Appendix A}
-To find the uncertainty, $\Delta \zeta$, where $\zeta$ defined as: 
-$$
-\zeta=\frac{\Delta d_1^2-(\frac{a_2}{4\pi^2f^2})^2}{\Delta d_1^2} \times 100\%
-$$
-Since constant constant terms can be ignored when calculating for uncertainty, $\zeta$ can be simplified to:
-$$(\frac{100}{16\pi^4\Delta {d_1}^2})(\frac{{a_2}^2}{f^4})$$
-
-Now, using the three uncertainty rules from the data booklet, $\Delta \zeta$ can be calculated using:
-
-$$x=a_2^2 \rightarrow \frac{\Delta x}{x}=\mid2\frac{\Delta a_2}{a_2}\mid \rightarrow \Delta x = 2a_2\Delta a_2$$
-
-$$y=f^4 \rightarrow \frac{\Delta y}{y}=\mid 4\frac{\Delta f}{f} \mid \rightarrow \Delta y = 4f^3\Delta f$$
-
-$$z = \frac{x}{y} \rightarrow \frac{\Delta z}{z}=\frac{\Delta x}{x} + \frac{\Delta y}{y} \rightarrow \Delta z = (\frac{a^2_2}{f^4})(\frac{2a_2\Delta a_2}{a_2^2} + \frac{4f^3\Delta f}{f^4}) \rightarrow \Delta z = \frac{2a_2\Delta a_2}{f^4} + \frac{4a^2_2 \Delta f}{f^5}$$
-
-$$\zeta = (\frac{100}{16\pi^4\Delta d_1^2})z$$
-
-$$\therefore \Delta \zeta = (\frac{100}{16\pi^4\Delta d_1^2})\Delta z \rightarrow \Delta \zeta = (\frac{100}{16\pi^4\Delta d_1^2})(\frac{2a_2\Delta a_2}{f^4} + \frac{4a^2_2 \Delta f}{f^5})$$
-
-
-\newpage
-\section{Appendix B}
-Program running on microcomputer to record sensor data.
-\begin{lstlisting}[language=Python]
-# import libraries for accelerometer, time, and storing
-from sense_hat import SenseHat
-import time, json
-
-# initialize sensor
-sense = SenseHat()
-
-# periodically record acceleration data and save to file
-data = []
-while True:
-    try:
-        time.sleep(0.01)
-        acceleration = sense.get_accelerometer_raw()
-        y = acceleration['y']
-        print("[+] gathering data")
-        data.append(y)
-    except KeyboardInterrupt:
-        with open('data.json', 'w', encoding='utf-8') as f:
-            print("[+] Saving to json file")
-            json.dump(data, f, ensure_ascii=False, indent=4)
-
-        exit()
-\end{lstlisting}
-
-\newpage
-\section{Appendix C}
-Program running on laptop to visualize raw data.
-\begin{lstlisting}[language=Python]
-# import data processing and visualization libraries
-import matplotlib.pyplot as plt
-import json
-import numpy as np
-
-# load data
-data = []
-with open("data.json", "r") as f:
-    data = json.load(f)
-
-# use timestep of sensor to understand real-life time elapsed
-TIMESTEP = 0.029
-x = list(range(1, len(data)+1))
-x = [x*TIMESTEP for x in range(len(data))]
-
-# set up graph
-plt.plot(x, data, label="x-axis")
-plt.xticks(np.arange(min(x), max(x)+1, 0.5))
-plt.yticks(np.arange(round(min(y1))-1, round(max(data))+1, 0.5))
-plt.xlabel(r'time ($s$)')
-plt.ylabel(r'acceleration ($ms^{-2}$)')
-plt.title('Acceleration vs Time Graph')
-plt.legend()
-
-plt.show()
-
-\end{lstlisting}
-
 \end{document}
-
-
